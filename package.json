@@ -67,5 +67,13 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coderkube-App/fetch-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Coderkube-App/fetch-client/issues"
+  },
+  "homepage": "https://github.com/Coderkube-App/fetch-client#readme"
 }
