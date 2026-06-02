@@ -1,6 +1,11 @@
-# universal-api-hooks
+# universal-api-hooks 🔗⚡
 
 Cross-platform API client for Next.js, React, React Native, and Vanilla.js with interceptors, retries, and full TypeScript support.
+
+<p align="center">
+  <img src="./assets/cli_demo.svg" alt="universal-api-hooks Demo" width="100%" style="max-width: 860px;" />
+</p>
+
 
 ## Features
 

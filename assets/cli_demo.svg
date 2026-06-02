@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
+      .fm{font-family:'Fira Code',monospace}.fs{font-family:'Inter',sans-serif}
+      
+      /* Smooth Floating Micro-Animations - Applied only to nested inner groups */
+      @keyframes floatIso {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      .fp-core { animation: floatIso 6s ease-in-out infinite; }
+      .fp-hub { animation: floatIso 5s ease-in-out infinite 0.6s; }
+      .fp-dest1 { animation: floatIso 5.5s ease-in-out infinite 0.3s; }
+      .fp-dest2 { animation: floatIso 5.5s ease-in-out infinite 0.9s; }
+      .fp-dest3 { animation: floatIso 5.5s ease-in-out infinite 1.5s; }
+
+      /* Pulsing active neon glowing toolbar button */
+      @keyframes pulseNeon {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.4)); opacity: 0.8; }
+        50% { filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.9)); opacity: 1; }
+      }
+      .active-neon { animation: pulseNeon 2s ease-in-out infinite; }
+
+      /* Pipeline Dash Flow */
+      @keyframes pipeFlow { to { stroke-dashoffset: -20px; } }
+      .flow-path { stroke-dasharray: 6,4; animation: pipeFlow 0.8s linear infinite; }
+
+      /* Sequential console logs visibility */
+      @keyframes showL1 { 0%, 23.9% { opacity: 0; } 24%, 100% { opacity: 1; } }
+      @keyframes showL2 { 0%, 67.9% { opacity: 0; } 68%, 100% { opacity: 1; } }
+      @keyframes showL3 { 0%, 75.9% { opacity: 0; } 76%, 100% { opacity: 1; } }
+      @keyframes showL4 { 0%, 83.9% { opacity: 0; } 84%, 100% { opacity: 1; } }
+      .l1 { animation: showL1 8s step-end infinite; }
+      .l2 { animation: showL2 8s step-end infinite; }
+      .l3 { animation: showL3 8s step-end infinite; }
+      .l4 { animation: showL4 8s step-end infinite; }
+    ]]></style>
+
+    <!-- Drop Shadows and Glows -->
+    <filter id="ds"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity=".55"/></filter>
+
+    <!-- Radial Gradients for cosmic background ambiance -->
+    <radialGradient id="amb-left" cx="20%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="amb-right" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#db2777" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#db2777" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect fill="#07080e" width="860" height="480" rx="16" />
+  <rect fill="url(#amb-left)" width="860" height="480" rx="16" />
+  <rect fill="url(#amb-right)" width="860" height="480" rx="16" />
+
+  <!-- Top bar header -->
+  <text class="fs" x="430" y="32" fill="#818cf8" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="3" opacity="0.6">UNIVERSAL HTTP PIPELINE PLATFORM</text>
+
+  <!-- ============ PIPELINE TRACK CONNECTORS ============ -->
+  <!-- Main Trunk Line -->
+  <path class="flow-path" d="M225,125 L300,125" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.5" />
+  <!-- Intercept Connection -->
+  <path class="flow-path" d="M380,125 L410,125" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.5" />
+  <path class="flow-path" d="M490,125 L510,125" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.5" />
+  
+  <!-- Branch 1 (Next.js SSR) -->
+  <path class="flow-path" d="M590,125 Q600,125 615,87" fill="none" stroke="#94a3b8" stroke-width="1.2" opacity="0.4" />
+  <!-- Branch 2 (React Hooks) -->
+  <path class="flow-path" d="M590,125 L615,125" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.4" />
+  <!-- Branch 3 (React Native) -->
+  <path class="flow-path" d="M590,125 Q600,125 615,163" fill="none" stroke="#818cf8" stroke-width="1.2" opacity="0.4" />
+
+  <!-- ============ LEFT: ISOMETRIC CORE CLIENT STACK ============ -->
+  <!-- Outer Layout Coordinator -->
+  <g transform="translate(15, 0)">
+    <!-- Inner Floating Animation Layer -->
+    <g class="fp-core" filter="url(#ds)">
+      <!-- Base Layer Card: Vanilla Node -->
+      <rect x="40" y="130" width="170" height="75" rx="10" fill="rgba(15, 23, 42, 0.4)" stroke="rgba(234, 179, 8, 0.15)" stroke-width="1" />
+      <text class="fs" x="52" y="148" fill="#eab308" font-size="8" font-weight="700">VANILLA JS / NODE.js</text>
+      <text class="fm" x="52" y="162" fill="#94a3b8" font-size="7.5">createApiClient({...})</text>
+      
+      <!-- Middle Layer Card: React Native -->
+      <rect x="52" y="100" width="170" height="75" rx="10" fill="rgba(15, 23, 42, 0.6)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1" />
+      <text class="fs" x="64" y="118" fill="#38bdf8" font-size="8" font-weight="700">REACT NATIVE SYSTEM</text>
+      <text class="fm" x="64" y="132" fill="#94a3b8" font-size="7.5">useApi('/users') hooks</text>
+
+      <!-- Top Active Layer Card: Universal Core -->
+      <rect x="64" y="70" width="170" height="75" rx="10" fill="rgba(30, 41, 59, 0.85)" stroke="rgba(99, 102, 241, 0.5)" stroke-width="1.5" />
+      <circle cx="82" cy="88" r="4" fill="#6366f1" class="active-neon" />
+      <text class="fs" x="92" y="91" fill="#e0f2fe" font-size="8.5" font-weight="700">UNIVERSAL ENGINE</text>
+      
+      <g transform="translate(76, 104)">
+        <rect width="64" height="12" rx="3" fill="rgba(99, 102, 241, 0.1)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="0.8" />
+        <text class="fm" x="32" y="9" fill="#818cf8" font-size="6.5" font-weight="700" text-anchor="middle">v1.0.1 (STABLE)</text>
+      </g>
+      <text class="fs" x="76" y="128" fill="#94a3b8" font-size="7" font-weight="600" letter-spacing="0.5">CROSS-PLATFORM HTTP</text>
+    </g>
+  </g>
+
+  <!-- ============ MIDDLE: INTERCEPTION & RETRY GATEWAY HUB ============ -->
+  <!-- Outer Layout Coordinator -->
+  <g transform="translate(0, 0)">
+    <!-- Inner Floating Animation Layer -->
+    <g class="fp-hub">
+      <!-- Gateway Card 1: onRequest Interceptor -->
+      <g transform="translate(300, 80)" filter="url(#ds)">
+        <rect width="80" height="90" rx="8" fill="rgba(30, 41, 59, 0.7)" stroke="rgba(129, 140, 248, 0.35)" stroke-width="1.2" />
+        <rect width="80" height="18" rx="8" fill="#1e293b" opacity="0.6" />
+        <rect y="12" width="80" height="6" fill="#1e293b" opacity="0.6" />
+        <text class="fs" x="40" y="12" fill="#818cf8" font-size="7.5" font-weight="700" text-anchor="middle">onRequest</text>
+        
+        <!-- Content Stack -->
+        <text class="fm" x="8" y="36" fill="#cbd5e1" font-size="7.5" font-weight="500">Inject Headers</text>
+        <text class="fs" x="8" y="48" fill="#94a3b8" font-size="6.5">Authorization</text>
+        
+        <rect class="active-neon" x="8" y="62" width="64" height="18" rx="4" fill="rgba(99, 102, 241, 0.1)" stroke="#6366f1" stroke-width="0.8" />
+        <text class="fm" x="40" y="73" fill="#818cf8" font-size="7" font-weight="700" text-anchor="middle">Bearer Token</text>
+      </g>
+
+      <!-- Gateway Card 2: Auto-Retry Engine -->
+      <g transform="translate(410, 80)" filter="url(#ds)">
+        <rect width="80" height="90" rx="8" fill="rgba(30, 41, 59, 0.75)" stroke="rgba(245, 158, 11, 0.35)" stroke-width="1.2" />
+        <rect width="80" height="18" rx="8" fill="#1e293b" opacity="0.6" />
+        <rect y="12" width="80" height="6" fill="#1e293b" opacity="0.6" />
+        <text class="fs" x="40" y="12" fill="#f59e0b" font-size="7.5" font-weight="700" text-anchor="middle">Auto-Retry</text>
+        
+        <!-- Circle Loop Gear -->
+        <circle cx="40" cy="46" r="14" fill="none" stroke="rgba(245, 158, 11, 0.15)" stroke-width="2.5" />
+        <circle cx="40" cy="46" r="14" fill="none" stroke="#f59e0b" stroke-dasharray="20,10" stroke-width="2.5" class="active-neon" />
+        <text class="fm" x="40" y="49" fill="#f59e0b" font-size="7.5" font-weight="700" text-anchor="middle">3x</text>
+
+        <text class="fs" x="40" y="72" fill="#cbd5e1" font-size="7" font-weight="600" text-anchor="middle">Delay: 500ms</text>
+        <text class="fs" x="40" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Backoff: Linear</text>
+      </g>
+
+      <!-- Gateway Card 3: onResponse Interceptor -->
+      <g transform="translate(510, 80)" filter="url(#ds)">
+        <rect width="80" height="90" rx="8" fill="rgba(30, 41, 59, 0.7)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1.2" />
+        <rect width="80" height="18" rx="8" fill="#1e293b" opacity="0.6" />
+        <rect y="12" width="80" height="6" fill="#1e293b" opacity="0.6" />
+        <text class="fs" x="40" y="12" fill="#10b981" font-size="7.5" font-weight="700" text-anchor="middle">onResponse</text>
+        
+        <!-- Content Stack -->
+        <text class="fm" x="8" y="36" fill="#cbd5e1" font-size="7.5" font-weight="500">Status Map</text>
+        <text class="fs" x="8" y="48" fill="#94a3b8" font-size="6.5">Response Hooks</text>
+        
+        <rect class="active-neon" x="8" y="62" width="64" height="18" rx="4" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="0.8" />
+        <text class="fm" x="40" y="73" fill="#10b981" font-size="7" font-weight="700" text-anchor="middle">Hydrate state</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ RIGHT: DUAL-PLATFORM MOUNT HYDRATION CARDS ============ -->
+  
+  <!-- Next.js Server SSR Card - Double-Group wrapped for layout stability -->
+  <g transform="translate(615, 45)">
+    <g class="fp-dest1" filter="url(#ds)">
+      <rect width="205" height="65" rx="8" fill="rgba(10, 10, 10, 0.85)" stroke="rgba(255,255,255,0.06)" stroke-width="1.2" />
+      <rect x="6" y="6" width="34" height="14" rx="3" fill="#fff" opacity="0.1" />
+      <text class="fs" x="23" y="16" fill="#fff" font-size="6.5" font-weight="700" text-anchor="middle">NEXT.JS</text>
+      <text class="fs" x="52" y="16" fill="#94a3b8" font-size="7.5" font-weight="600">Server Side Hydration</text>
+
+      <text class="fm" x="12" y="38" fill="#34d399" font-size="7.5" font-weight="600">
+        const res = await api.get('/posts');
+      </text>
+      <text class="fs" x="12" y="52" fill="#475569" font-size="7" font-weight="600">STABLE SERVER COMPONENTS • SECURE MEMORY</text>
+    </g>
+  </g>
+
+  <!-- React Client Hooks Card - Double-Group wrapped -->
+  <g transform="translate(615, 125)">
+    <g class="fp-dest2" filter="url(#ds)">
+      <rect width="205" height="65" rx="8" fill="rgba(30, 41, 59, 0.75)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.2" />
+      <rect x="6" y="6" width="28" height="14" rx="3" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.3)" stroke-width="1" />
+      <text class="fs" x="20" y="16" fill="#38bdf8" font-size="6.5" font-weight="700" text-anchor="middle">REACT</text>
+      <text class="fs" x="46" y="16" fill="#cbd5e1" font-size="7.5" font-weight="600">useGet() State Hook</text>
+
+      <text class="fm" x="12" y="38" fill="#a78bfa" font-size="7.5" font-weight="600">
+        const { data, loading } = useGet('/users');
+      </text>
+      <text class="fs" x="12" y="52" fill="#475569" font-size="7" font-weight="600">AUTO-CACHING • PREVENT DOUBLE FETCH</text>
+    </g>
+  </g>
+
+  <!-- React Native Mobile Card - Double-Group wrapped -->
+  <g transform="translate(615, 205)">
+    <g class="fp-dest3" filter="url(#ds)">
+      <rect width="205" height="65" rx="8" fill="rgba(30, 41, 59, 0.75)" stroke="rgba(129, 140, 248, 0.35)" stroke-width="1.2" />
+      <rect x="6" y="6" width="48" height="14" rx="3" fill="rgba(129,140,248,0.12)" stroke="rgba(129,140,248,0.3)" stroke-width="1" />
+      <text class="fs" x="30" y="16" fill="#818cf8" font-size="6.5" font-weight="700" text-anchor="middle">NATIVE</text>
+      <text class="fs" x="66" y="16" fill="#cbd5e1" font-size="7.5" font-weight="600">Mobile Request Stack</text>
+
+      <text class="fm" x="12" y="38" fill="#60a5fa" font-size="7.5" font-weight="600">
+        client.post('/users', { body });
+      </text>
+      <text class="fs" x="12" y="52" fill="#475569" font-size="7" font-weight="600">SECURE STORE MAPPING • ZERO THREAD BLOCK</text>
+    </g>
+  </g>
+
+  <!-- ============ BOTTOM: REAL-TIME CONSOLE RETRY STACK ============ -->
+  <g transform="translate(60, 295)">
+    <g filter="url(#ds)">
+      <rect width="740" height="135" rx="12" fill="rgba(13, 17, 23, 0.95)" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" />
+      <rect width="740" height="22" rx="12" fill="#161b22" />
+      <rect y="16" width="740" height="6" fill="#161b22" />
+      <circle cx="12" cy="11" r="3" fill="#ff5f56" /><circle cx="20" cy="11" r="3" fill="#ffbd2e" /><circle cx="28" cy="11" r="3" fill="#27c93f" />
+      <text class="fs" x="370" y="14" fill="#8b949e" font-size="8.5" font-weight="600" text-anchor="middle">developer-console — auto-retry demonstration</text>
+      <line x1="0" y1="22" x2="740" y2="22" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+
+      <!-- Terminal Output Content -->
+      <g transform="translate(16, 36)">
+        <!-- Line 1 Prompt -->
+        <text class="fm" y="4" font-size="9.5" fill="#58a6ff" font-weight="700">❯</text>
+        
+        <!-- Line 1 Command text -->
+        <text class="fm" x="12" y="4" font-size="9.5" fill="#c9d1d9">npm i universal-api-hooks</text>
+        
+        <!-- Native SMIL Typewriter Cover for Command 1 (100% layout-stable & cross-browser safe) -->
+        <rect x="12" y="-6" width="230" height="13" fill="#0d1117">
+          <animate attributeName="width" 
+                   values="230;230;0;0;230" 
+                   keyTimes="0;0.05;0.22;0.95;1" 
+                   dur="8s" 
+                   repeatCount="indefinite" />
+        </rect>
+        
+        <!-- Native SMIL Cursor 1 -->
+        <rect y="-6" width="5" height="11" fill="#58a6ff" class="blink">
+          <animate attributeName="x" 
+                   values="12;12;227;227;12" 
+                   keyTimes="0;0.05;0.22;0.26;1" 
+                   dur="8s" 
+                   repeatCount="indefinite" />
+          <animate attributeName="opacity" 
+                   values="1;1;1;0;0;1" 
+                   keyTimes="0;0.22;0.25;0.26;0.95;1" 
+                   dur="8s" 
+                   repeatCount="indefinite" />
+        </rect>
+
+        <!-- Success Log -->
+        <g class="l1">
+          <text class="fm" x="12" y="20" fill="#57ab5a" font-size="9">&#10003; universal-api-hooks@1.0.1 successfully installed</text>
+        </g>
+
+        <!-- Line 2 Prompt -->
+        <g class="l1">
+          <text class="fm" y="38" font-size="9.5" fill="#58a6ff" font-weight="700">❯</text>
+          
+          <!-- Line 2 Command text -->
+          <text class="fm" x="12" y="38" font-size="9.5" fill="#c9d1d9">node run-api-demo.js</text>
+          
+          <!-- Native SMIL Typewriter Cover for Command 2 -->
+          <rect x="12" y="28" width="210" height="13" fill="#0d1117">
+            <animate attributeName="width" 
+                     values="210;210;0;0;210" 
+                     keyTimes="0;0.45;0.67;0.95;1" 
+                     dur="8s" 
+                     repeatCount="indefinite" />
+          </rect>
+          
+          <!-- Native SMIL Cursor 2 -->
+          <rect y="28" width="5" height="11" fill="#58a6ff" class="blink">
+            <animate attributeName="x" 
+                     values="12;12;12;222;222;12" 
+                     keyTimes="0;0.45;0.46;0.67;0.71;1" 
+                     dur="8s" 
+                     repeatCount="indefinite" />
+            <animate attributeName="opacity" 
+                     values="0;0;1;1;0;0;0" 
+                     keyTimes="0;0.45;0.46;0.67;0.71;0.95;1" 
+                     dur="8s" 
+                     repeatCount="indefinite" />
+          </rect>
+        </g>
+
+        <!-- Retry Engine Warnings & Recover Logs -->
+        <g class="l2">
+          <text class="fm" x="12" y="54" fill="#ff5f56" font-size="9">
+            [HTTP] GET /users -&gt; status: 503 Service Unavailable (Temporary Network Fail)
+          </text>
+        </g>
+        
+        <g class="l3">
+          <text class="fm" x="12" y="70" fill="#eab308" font-size="9">
+            [RETRY] Caught 503 error. Auto-retrying request (Attempt 1/3) in 500ms...
+          </text>
+        </g>
+
+        <g class="l4">
+          <text class="fm" x="12" y="86" fill="#34d399" font-size="9">
+            &#10003; [HTTP] GET /users -&gt; status: 200 OK | Auto-recovery successful | parsed in 1.2ms
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
